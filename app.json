@@ -1,0 +1,47 @@
+{
+  "name": "Garant Telegram Bot",
+  "description": "Telegram bot for secure transaction guarantees",
+  "keywords": ["telegram", "bot", "garant", "payments"],
+  "website": "https://github.com/yourusername/garant-bot",
+  "repository": "https://github.com/yourusername/garant-bot",
+  "logo": "https://telegram.org/img/t_logo.png",
+  "success_url": "/",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "CRYPTOPAY_API_KEY": {
+      "description": "CryptoPay API Key",
+      "required": true
+    },
+    "CRYPTOPAY_WALLET_ID": {
+      "description": "CryptoPay Wallet ID",
+      "required": true
+    },
+    "EXTERNAL_EXCHANGE_WALLET_ADDRESS": {
+      "description": "External wallet address for commission",
+      "required": true
+    },
+    "COMMISSION_PERCENT": {
+      "description": "Commission percentage (default: 2.0)",
+      "value": "2.0",
+      "required": false
+    },
+    "ADMIN_IDS": {
+      "description": "Admin user IDs (comma separated)",
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

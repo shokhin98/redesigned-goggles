@@ -155,12 +155,12 @@ class GarantBot:
         # Получаем количество непрочитанных уведомлений
         unread_count = self.db.get_unread_notifications_count(user.id)
 
-        welcome_text = f"""🛡️ **ГАРАНТ БОТ** 🛡️
+        welcome_text = f"""🛡️ ГАРАНТ БОТ 🛡️
 
-🎉 **Добро пожаловать, {user.first_name}!**
+🎉 Добро пожаловать, {user.first_name}!
 
-🔐 **Ваш надежный помощник для безопасных сделок**
-💼 **Защита покупателей и исполнителей**
+🔐 Ваш надежный помощник для безопасных сделок
+💼 Защита покупателей и исполнителей
 
 📋 КАК ЭТО РАБОТАЕТ:
 
@@ -216,7 +216,7 @@ class GarantBot:
 • Все транзакции записываются в базу данных
 
 📞 Поддержка:
-Если у вас возникли вопросы, обратитесь к администратору: @WawilonovX
+Если у вас возникли вопросы, обратитесь к администратору: @m1ras18
         """
         
         # Проверяем, это команда или callback
@@ -491,7 +491,7 @@ class GarantBot:
                 deal_text = f"✅ Сделка создана!\n\n"
                 deal_text += f"🆔 ID: {deal_id}\n"
                 deal_text += f"💰 Сумма: {amount} $\n"
-                deal_text += f"💸 Комиссия: {amount * (COMMISSION_PERCENT / 100)} $ ({COMMISSION_PERCENT}%)\n"
+                deal_text += f"💸 Комиссия: {amount * 0.02} $ (2.0%)\n"
                 deal_text += f"📝 Описание: {description}\n\n"
                 deal_text += f"💳 Способ оплаты: 💎 CryptoPay (USDT)\n"
                 deal_text += f"💳 Тип оплаты: Полная оплата\n"
@@ -522,7 +522,7 @@ class GarantBot:
             deal_text = f"✅ Сделка создана!\n\n"
             deal_text += f"🆔 ID: {deal_id}\n"
             deal_text += f"💰 Сумма: {amount} $\n"
-            deal_text += f"💸 Комиссия: {amount * (COMMISSION_PERCENT / 100)} $ ({COMMISSION_PERCENT}%)\n"
+            deal_text += f"💸 Комиссия: {amount * 0.02} $ (2.0%)\n"
             deal_text += f"📝 Описание: {description}\n\n"
             deal_text += f"💳 Способ оплаты: CryptoPay (USD)\n"
             deal_text += f"💳 Способ получения: CryptoPay (USD)\n\n"
@@ -813,6 +813,7 @@ class GarantBot:
         # Формируем сообщение об оплате
         payment_text = f"💳 Оплата сделки {deal_id}\n\n"
         payment_text += f"💰 Общая сумма: {deal['amount']} $\n"
+        payment_text += f"💸 Комиссия: {payment_amount * 0.02} $ (2.0%)\n"
         payment_text += f"💸 Способ оплаты: 💎 CryptoPay (USDT)\n"
         payment_text += f"💳 Тип оплаты: Полная оплата\n"
         payment_text += f"💵 Сумма к оплате: {payment_amount} USDT\n"
@@ -855,6 +856,7 @@ class GarantBot:
             f"💳 Создание чека для оплаты...\n\n"
             f"🆔 ID сделки: {deal_id}\n"
             f"💰 Сумма: {payment_amount} $\n"
+            f"💸 Комиссия: {payment_amount * 0.02} $ (2.0%)\n"
             f"💵 Сумма в USDT: {payment_amount}\n\n"
             f"⏳ Создаем чек через CryptoPay API...",
             reply_markup=InlineKeyboardMarkup([[
@@ -883,6 +885,7 @@ class GarantBot:
                 payment_text = f"💳 Чек создан для оплаты\n\n"
                 payment_text += f"🆔 ID сделки: {deal_id}\n"
                 payment_text += f"💰 Сумма: {payment_amount} $\n"
+                payment_text += f"💸 Комиссия: {payment_amount * 0.02} $ (2.0%)\n"
                 payment_text += f"💵 Сумма в USDT: {payment_amount}\n"
                 payment_text += f"💳 Чек: {check_id}\n"
                 payment_text += f"📝 Описание: {deal['description']}\n\n"

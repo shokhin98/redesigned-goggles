@@ -254,7 +254,7 @@ class AdminPanel:
         active_count = self.db.get_active_deals_count()
         
         settings_text = "⚙️ Настройки бота\n\n"
-        settings_text += f"💰 Комиссия: 40%\n"
+        settings_text += f"💰 Комиссия: 2.0%\n"
         settings_text += f"🔧 Версия: 1.0.0\n"
         settings_text += f"📊 База данных: SQLite\n"
         settings_text += f"🤖 Статус: Работает\n\n"

